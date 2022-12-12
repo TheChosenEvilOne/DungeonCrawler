@@ -1,0 +1,283 @@
+macro "macro"
+	elem 
+		name = "A"
+		command = "MoveKey 8 1"
+	elem 
+		name = "A+UP"
+		command = "MoveKey 8 0"
+	elem 
+		name = "D"
+		command = "MoveKey 4 1"
+	elem 
+		name = "D+UP"
+		command = "MoveKey 4 0"
+	elem 
+		name = "S"
+		command = "MoveKey 2 1"
+	elem 
+		name = "S+UP"
+		command = "MoveKey 2 0"
+	elem 
+		name = "T"
+		command = "say"
+	elem 
+		name = "W"
+		command = "MoveKey 1 1"
+	elem 
+		name = "W+UP"
+		command = "MoveKey 1 0"
+	elem 
+		name = "Numpad1"
+		command = "MoveKey 10 1"
+	elem 
+		name = "Numpad1+UP"
+		command = "MoveKey 10 0"
+	elem 
+		name = "Numpad2"
+		command = "MoveKey 2 1"
+	elem 
+		name = "Numpad2+UP"
+		command = "MoveKey 2 0"
+	elem 
+		name = "Numpad3"
+		command = "MoveKey 6 1"
+	elem 
+		name = "Numpad3+UP"
+		command = "MoveKey 6 0"
+	elem 
+		name = "Numpad4"
+		command = "MoveKey 8 1"
+	elem 
+		name = "Numpad4+UP"
+		command = "MoveKey 8 0"
+	elem 
+		name = "Numpad6"
+		command = "MoveKey 4 1"
+	elem 
+		name = "Numpad6+UP"
+		command = "MoveKey 4 0"
+	elem 
+		name = "Numpad7"
+		command = "MoveKey 9 1"
+	elem 
+		name = "Numpad7+UP"
+		command = "MoveKey 9 0"
+	elem 
+		name = "Numpad8"
+		command = "MoveKey 1 1"
+	elem 
+		name = "Numpad8+UP"
+		command = "MoveKey 1 0"
+	elem 
+		name = "Numpad9"
+		command = "MoveKey 5 1"
+	elem 
+		name = "Numpad9+UP"
+		command = "MoveKey 5 0"
+
+
+menu "menu"
+	elem 
+		name = "&File"
+		command = ""
+		saved-params = "is-checked"
+	elem 
+		name = "&Quit"
+		command = ".quit"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "Reconnect"
+		command = ".reconnect"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "Scaling"
+		command = ""
+		saved-params = "is-checked"
+	elem 
+		name = "Normal"
+		command = ".winset \"map.zoom-mode=normal\""
+		category = "Scaling"
+		is-checked = true
+		can-check = true
+		group = "scaling"
+		saved-params = "is-checked"
+	elem 
+		name = "Nearest neighbour"
+		command = ".winset \"map.zoom-mode=distort\""
+		category = "Scaling"
+		can-check = true
+		group = "scaling"
+		saved-params = "is-checked"
+	elem 
+		name = "Bilinear"
+		command = ".winset \"map.zoom-mode=blur\""
+		category = "Scaling"
+		can-check = true
+		group = "scaling"
+		saved-params = "is-checked"
+	elem 
+		name = "Zoom"
+		command = ""
+		saved-params = "is-checked"
+	elem 
+		name = "Automatic"
+		command = ".winset \"map.zoom=0\""
+		category = "Zoom"
+		is-checked = true
+		can-check = true
+		group = "adjust"
+		saved-params = "is-checked"
+	elem 
+		name = "1x"
+		command = ".winset \"map.zoom=1\""
+		category = "Zoom"
+		can-check = true
+		group = "adjust"
+		saved-params = "is-checked"
+	elem 
+		name = "2x"
+		command = ".winset \"map.zoom=2\""
+		category = "Zoom"
+		can-check = true
+		group = "adjust"
+		saved-params = "is-checked"
+	elem 
+		name = "3x"
+		command = ".winset \"map.zoom=3\""
+		category = "Zoom"
+		can-check = true
+		group = "adjust"
+		saved-params = "is-checked"
+	elem 
+		name = "4x"
+		command = ".winset \"map.zoom=4\""
+		category = "Zoom"
+		can-check = true
+		group = "adjust"
+		saved-params = "is-checked"
+	elem 
+		name = "8x"
+		command = ".winset \"map.zoom=8\""
+		category = "Zoom"
+		can-check = true
+		group = "adjust"
+		saved-params = "is-checked"
+
+
+window "default"
+	elem "default"
+		type = MAIN
+		pos = 281,0
+		size = 672x480
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		is-default = true
+		saved-params = "pos;size;is-minimized;is-maximized"
+		on-size = "resized [[inner-size]]"
+		title = "DungeonCrawler"
+		statusbar = false
+		macro = "macro"
+		menu = "menu"
+	elem "child1"
+		type = CHILD
+		pos = 0,0
+		size = 672x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = "splitter"
+		left = "left-panel"
+		right = "right-panel"
+		is-vert = true
+		splitter = 60
+
+window "inventory"
+	elem "inventory"
+		type = MAIN
+		pos = 281,0
+		size = 128x128
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Map 2"
+		is-pane = true
+	elem "inv"
+		type = MAP
+		pos = 0,0
+		size = 128x128
+		anchor1 = 0,0
+		anchor2 = 100,100
+		background-color = #ffffff
+		right-click = true
+		saved-params = "zoom;letterbox;zoom-mode"
+
+window "left-panel"
+	elem "left-panel"
+		type = MAIN
+		pos = 281,0
+		size = 480x580
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		saved-params = "pos;size;is-minimized;is-maximized"
+		is-pane = true
+	elem "output"
+		type = OUTPUT
+		pos = 0,480
+		size = 480x96
+		anchor1 = 0,100
+		anchor2 = 100,100
+		is-default = true
+		border = line
+		saved-params = "max-lines"
+	elem "map"
+		type = MAP
+		pos = 0,0
+		size = 480x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		font-family = "Small Fonts"
+		font-size = 6
+		is-default = true
+		right-click = true
+		saved-params = "zoom;letterbox;zoom-mode"
+		style = ".center { text-align: center; } .maptext {font-smooth: never;-dm-text-outline: 1px black; color: white;} .small {} .large { font-size: 8px; }"
+
+window "right-panel"
+	elem "right-panel"
+		type = MAIN
+		pos = 281,0
+		size = 192x480
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		saved-params = "pos;size;is-minimized;is-maximized"
+		is-pane = true
+	elem "child2"
+		type = CHILD
+		pos = 0,0
+		size = 192x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = "splitter"
+		left = "stat"
+		right = "inventory"
+		is-vert = false
+		show-splitter = false
+
+window "stat"
+	elem "stat"
+		type = MAIN
+		pos = 426,13
+		size = 192x192
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		saved-params = "pos;size;is-minimized;is-maximized"
+		is-pane = true
+	elem "stat"
+		type = BROWSER
+		pos = 0,0
+		size = 192x192
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = ""
+
