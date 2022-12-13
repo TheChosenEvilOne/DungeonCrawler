@@ -1,14 +1,14 @@
 /datum/world_tunneller/hallway
 
-/datum/world_tunneller/hallway/tunnel(x, y, z, dir = pick(NORTH, SOUTH, WEST, EAST), datum/generator_state/state)
+/datum/world_tunneller/hallway/tunnel(x, y, z, dir = pick(NORTH, SOUTH, WEST, EAST), datum/world_generator/gen)
 	var/T
 	T = locate(x, y, z)
-	state.add_poi(POI_ENTRANCE_POS, list(list(T, dir)))
+	gen.add_poi(POI_ENTRANCE_POS, list(list(T, dir)))
 	while (IN_BOUNDS(x, y))
 		T = locate(x, y, z)
 		if (istype(T, /turf/floor))
 			return
-		T = new state.style.floor(T)
+		T = new gen.style.floor(T)
 		if (length <= 0)
 			break
 		length--
@@ -23,5 +23,5 @@
 			else
 				dir ^= 12 * prob(50)
 	if (IN_BOUNDS(x, y))
-		state.add_poi(POI_ENTRANCE_POS, list(list(T, dir)))
+		gen.add_poi(POI_ENTRANCE_POS, list(list(T, dir)))
 		return list(T, dir)

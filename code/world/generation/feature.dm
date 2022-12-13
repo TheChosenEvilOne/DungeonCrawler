@@ -1,4 +1,4 @@
 /datum/world_feature
 	var/complexity
 
-/datum/world_feature/proc/generate(x, y, z, dir, datum/generator_state/state)
+/datum/world_feature/proc/generate(x, y, z, dir, datum/world_generator/gen)

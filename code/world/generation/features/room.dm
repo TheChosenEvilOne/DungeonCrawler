@@ -1,7 +1,7 @@
 /datum/world_feature/room
 	complexity = 1
 
-/datum/world_feature/room/generate(x, y, z, dir, datum/generator_state/state)
+/datum/world_feature/room/generate(x, y, z, dir, datum/world_generator/gen)
 	var/size = rand(2, 4)
 	var/w = size - round(size * rand() / 2)
 	var/h = size - round(size * rand() / 2)
@@ -21,7 +21,7 @@
 	else if (dir & 12)
 		var/D = ((dir >> 2) * 2 - 3)
 		x -= w * D + D
-	if (!state.reserve(rect(x - w, y - h, x + w, y + h)))
+	if (!gen.reserve(rect(x - w, y - h, x + w, y + h)))
 		return
 	var/list/pois = list(
 		list(locate(x + rand(-w, w), y + h + 1, z), NORTH),
@@ -32,9 +32,9 @@
 		dir = (dir & 10) >> 1 | (dir & 5) << 1
 		var/i = (dir &  3) + ((dir >> 2) + (((dir >> 2) + 1) & 2))
 		pois.Cut(i, i+1)
-	state.add_poi(POI_TUNNEL_POS, pois)
+	gen.add_poi(POI_TUNNEL_POS, pois)
 	for (var/x2 = -w, x2 <= w, x2++)
 		for (var/y2 = -h, y2 <= h, y2++)
 			var/turf/T = locate(x + x2, y + y2, z)
-			new state.style.floor(T)
-			if (prob(2)) state.add_poi(POI_RANDOM_POS, T)
+			new gen.style.floor(T)
+			if (prob(2)) gen.add_poi(POI_RANDOM_POS, T)

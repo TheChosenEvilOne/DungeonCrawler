@@ -1,6 +1,6 @@
 /datum/world_tunneller/cave
 
-/datum/world_tunneller/cave/tunnel(x, y, z, dir = pick(NORTH, SOUTH, WEST, EAST), datum/generator_state/state)
+/datum/world_tunneller/cave/tunnel(x, y, z, dir = pick(NORTH, SOUTH, WEST, EAST), datum/world_generator/gen)
 	var/vx = 0
 	var/vy = 0
 	if (dir & 3)
@@ -17,7 +17,7 @@
 			y += vy * 10
 		for (var/dx in -1 to 1)
 			for (var/dy in -1 to 1)
-				new state.style.floor(locate(x+dx, y+dy, z))
+				new gen.style.floor(locate(x+dx, y+dy, z))
 		x += vx
 		y += vy
 		var/theta = rand() * 10 - 5
