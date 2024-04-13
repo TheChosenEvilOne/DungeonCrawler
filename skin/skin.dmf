@@ -177,6 +177,7 @@ window "default"
 		saved-params = "pos;size;is-minimized;is-maximized"
 		on-size = "resized [[inner-size]]"
 		title = "DungeonCrawler"
+		icon = 'icons\\logo.png'
 		statusbar = false
 		macro = "macro"
 		menu = "menu"
