@@ -1,7 +1,7 @@
 /mob/undead
-    name = "undead"
-    desc = "not alive"
-    icon_state = "skeleton"
+	name = "undead"
+	desc = "not alive"
+	icon_state = "skeleton"
 /mob/undead/skeleton
 	name = "skeleton"
 	desc = "Bad to the bone."
