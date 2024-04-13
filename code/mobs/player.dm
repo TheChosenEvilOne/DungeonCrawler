@@ -1,3 +1,4 @@
 /mob/player
 	icon = 'icons/mobs/player.dmi'
-	icon_state = "@"
+	icon_state = "player"
+	desc = "Our hero..."
