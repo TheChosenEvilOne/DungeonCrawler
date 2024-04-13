@@ -11,5 +11,3 @@
 #define RARITY_RARE			2
 #define RARITY_EPIC			3
 #define RARITY_LEGENDARY	4
-#define RARITY_ARTIFACT	    5
-#define RARITY_CURSED       6
