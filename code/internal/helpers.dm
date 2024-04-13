@@ -30,5 +30,3 @@
 		if (RARITY_RARE) return "#00FFFF"
 		if (RARITY_EPIC) return "#800080"
 		if (RARITY_LEGENDARY) return "#FFA500"
-		if (RARITY_ARTIFACT) return "#B50E0E"
-		if (RARITY_CURSED) return "#824858"
