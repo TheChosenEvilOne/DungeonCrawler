@@ -128,9 +128,10 @@
 	new /obj/corpse(loc, src)
 
 /mob/proc/take_damage(damage)
-
-	var/final_damage
-	hp -= final_damage
+	var/final_damage = damage - ac * 0.05
+	if(final_damage < 0)
+		final_damage = 0
+	hp -= final_damage //maybe make a function for it later so we can negate lethal damage or something
 	if (hp <= 0)
 		on_death()
 
