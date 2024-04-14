@@ -73,5 +73,6 @@
 #include "code\world\tiles\floors.dm"
 #include "code\world\tiles\walls.dm"
 #include "skin\skin.dmf"
+#include "code\globals\list_conversion.dm"
 // END_INCLUDE
 

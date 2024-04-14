@@ -9,8 +9,10 @@
 	var/max_hp = 100
 	var/mp
 	var/max_mp = 100
+	var/ac = 0
 
-	var/stats = list("STR" = 10, "INT" = 10, "DEX" = 10)
+	var/list/stats = list("STR" = 10, "INT" = 10, "DEX" = 10)
+	var/stats_final = list()
 	var/skills = list()
 	// Inventory
 	var/list/obj/item/inv[64]
@@ -32,14 +34,25 @@
 /mob/Stat()
 	bstat("Health", "Health: [hp] / [max_hp]")
 	bstat("Mana", "Mana: [mp] / [max_mp]")
-	for (var/s in stats)
-		bstat(s, "[s]: [stats[s]]")
+	for (var/s in stats_final)
+		bstat(s, "[s]: [stats_final[s]]")
+
+/mob/proc/update_stats()
+	var/final_stats = stats.Copy()
+
+	for(var/item in equipment)
+		var/equipment_stats = equipment[item].get_stats()
+		for(var/stat in equipment_stats)
+			final_stats[stat] += equipment_stats[stat]
+
+	stats_final = final_stats		
 
 /mob/proc/find_type(type)
 	for (var/i in 1 to inv.len)
 		if (istype(inv[i], type))
 			return i
 
+//inventory
 /mob/proc/drop(slot, location = loc)
 	. = null
 	if (!inv[slot])
@@ -73,12 +86,47 @@
 		return TRUE
 	src << "You do not have space for that."
 
+/mob/proc/equip(obj/item/equipable/I)
+	if(!can_equip(I))//already thinking about adding a text that tells you why you couldnt equip
+		return
+
+	equipment[I.item_slot] = I
+	I.on_equip(src)
+	update_stats()
+	print_ac_list(equipment)
+	. = I.name
+
+/mob/proc/take_off(item_slot)
+	var/in_slot = equipment[item_slot]
+	if(!can_take_off(in_slot))
+		return
+	. = "[in_slot?:name] taken off"
+	var/index = equipment.Find(in_slot)
+	equipment.Cut(index, index + 1)
+	// equipment.Remove(item_slot)
+	// equipment[item_slot] = null
+	print_ac_list(equipment)
+
+
+/mob/proc/can_equip(obj/item/equipable/I)
+	if(isnull(equipment[I.item_slot]))
+		return TRUE
+	else
+		src << "something went wrong"
+		return FALSE
+
+/mob/proc/can_take_off(obj/item/equipable/I)
+	if(!I.cursed)
+		return TRUE
+	else
+		return FALSE
+
 /mob/proc/on_death()
 	oview(5) << "[src] dies."
 	new /obj/corpse(loc, src)
 
 /mob/proc/take_damage(damage)
-	hp -= damage
+	hp -= damage - floor(ac / 5)
 	if (hp <= 0)
 		on_death()
 

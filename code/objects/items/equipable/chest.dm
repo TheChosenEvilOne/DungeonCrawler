@@ -5,6 +5,7 @@
 /obj/item/equipable/chest/leather
 	name = "Leather Chestplate"
 	icon_state = "leather"
+	stats = list("STR" = 20, "INT" = 20, "DEX" = 20)
 
 /obj/item/equipable/chest/steel
 	name = "Steel Chestplate"

@@ -38,7 +38,7 @@
 		return
 	if (istype(over_object, /ui_element/item_slot))
 		var/ui_element/item_slot/slot = over_object
-		if (slot.item)
+		if (slot.item) //implement swapping?
 			return
 		slot.insert_item(item)
 		usr.inv[slot.slot_number] = item
