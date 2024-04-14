@@ -22,6 +22,7 @@
 #include "code\_defines\layers.dm"
 #include "code\_defines\skills.dm"
 #include "code\globals\list_conversion.dm"
+#include "code\globals\overlays.dm"
 #include "code\internal\area.dm"
 #include "code\internal\atom.dm"
 #include "code\internal\client.dm"
