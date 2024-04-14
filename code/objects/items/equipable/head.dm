@@ -1,4 +1,5 @@
 /obj/item/equipable/head
+	layer = HEAD_LAYER
 	icon = 'icons/items/head.dmi'
 	item_slot = ITEM_SLOT_HEAD
 

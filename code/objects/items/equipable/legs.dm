@@ -1,4 +1,5 @@
 /obj/item/equipable/legs
+	layer = LEGS_LAYER
 	icon = 'icons/items/legs.dmi'
 	item_slot = ITEM_SLOT_LEGS
 

@@ -1,4 +1,5 @@
 /obj/item/equipable/belt
+	layer = BELT_LAYER
 	icon = 'icons/items/belt.dmi'
 	item_slot = ITEM_SLOT_BELT
 
