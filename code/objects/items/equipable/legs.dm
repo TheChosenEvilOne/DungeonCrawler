@@ -1,11 +1,13 @@
 /obj/item/equipable/legs
 	layer = LEGS_LAYER
-	icon = 'icons/items/legs.dmi'
+	icon = 'icons/items/equipable/legs.dmi'
+	worn_icon = 'icons/items/worn_icons/legs_worn.dmi'
 	item_slot = ITEM_SLOT_LEGS
 
 /obj/item/equipable/legs/leather
 	name = "Leather Leggins"
 	icon_state = "leather"
+	worn_icon_state = "leather"
 
 /obj/item/equipable/legs/steel
 	name = "Steel Leggins"

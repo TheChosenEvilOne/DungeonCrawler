@@ -1,7 +1,7 @@
 /obj/item/equipable/chest
 	layer = ARMOR_LAYER
-	icon = 'icons/items/chest.dmi'
-	worn_icon = 'icons/items/worn_icons/worn_icons.dmi'
+	icon = 'icons/items/equipable/chest.dmi'
+	worn_icon = 'icons/items/worn_icons/chest_worn.dmi'
 	item_slot = ITEM_SLOT_CHEST
 
 /obj/item/equipable/chest/leather

@@ -1,6 +1,7 @@
 /obj/item/equipable/clothing
 	layer = CLOTHING_LAYER
-	icon = 'icons/items/clothing.dmi'
+	icon = 'icons/items/equipable/clothing.dmi'
+	worn_icon = 'icons/items/worn_icons/clothing_worn.dmi'
 	item_slot = ITEM_SLOT_CLOTHING
 
 /obj/item/equipable/clothing/shirt
@@ -14,6 +15,7 @@
 /obj/item/equipable/clothing/magic/robe
 	name = "Robe"
 	icon_state = "robe"
+	worn_icon_state = "robe"
 
 /obj/item/equipable/clothing/magic/evilrobe
 	name = "Hooded robe"

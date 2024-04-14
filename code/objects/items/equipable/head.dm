@@ -1,11 +1,13 @@
 /obj/item/equipable/head
 	layer = HEAD_LAYER
-	icon = 'icons/items/head.dmi'
+	icon = 'icons/items/equipable/head.dmi'
+	worn_icon = 'icons/items/worn_icons/head_worn.dmi'
 	item_slot = ITEM_SLOT_HEAD
 
 /obj/item/equipable/head/round
 	name = "Steel round helmet"
 	icon_state = "round"
+	worn_icon_state = "round"
 
 /obj/item/equipable/head/full
 	name = "Steel full helmet"

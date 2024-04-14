@@ -89,12 +89,8 @@
 /mob/proc/equip(obj/item/equipable/I)
 	if(!can_equip(I))//already thinking about adding a text that tells you why you couldnt equip
 		return
-	//just need to improve the overlay creation, other than that it WORKS!
-	var/obj/overlay = new()
-	overlay.icon = I.worn_icon
-	overlay.icon_state = I.worn_icon_state
-	overlay.layer = I.layer
-	src.overlays += overlay
+	//okay basic overlays working
+	src.overlays += create_overlay(I)
 	equipment[I.item_slot] = I
 	I.on_equip(src)
 	update_stats()
@@ -106,11 +102,7 @@
 	if(!can_take_off(in_slot))
 		return
 	. = "[in_slot?:name] taken off"
-	var/obj/overlay = new()
-	overlay.icon = in_slot?:worn_icon
-	overlay.icon_state = in_slot?:worn_icon_state
-	overlay.layer = in_slot?:layer
-	src.overlays -= overlay
+	src.overlays -= create_overlay(in_slot)
 	equipment.Remove(item_slot)
 	print_ac_list(equipment)
 
