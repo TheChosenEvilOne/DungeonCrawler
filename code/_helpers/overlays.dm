@@ -1,5 +1,5 @@
 /atom/proc/create_overlay(obj/item/equippable/from)
-	var/obj/overlay = new
+	var/image/overlay = new
 	overlay.icon = from.worn_icon
 	overlay.icon_state = from.worn_icon_state
 	overlay.layer = from.layer
