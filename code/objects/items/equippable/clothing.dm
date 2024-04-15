@@ -1,22 +1,22 @@
-/obj/item/equipable/clothing
+/obj/item/equippable/clothing
 	layer = CLOTHING_LAYER
-	icon = 'icons/items/equipable/clothing.dmi'
+	icon = 'icons/items/equippable/clothing.dmi'
 	worn_icon = 'icons/items/worn_icons/clothing_worn.dmi'
 	item_slot = ITEM_SLOT_CLOTHING
 
-/obj/item/equipable/clothing/shirt
+/obj/item/equippable/clothing/shirt
 	name = "Shirt"
 	icon_state = "shirt"
 
-/obj/item/equipable/clothing/gamberson
+/obj/item/equippable/clothing/gamberson
 	name = "Gamberson"
 	icon_state = "gamberson"
 
-/obj/item/equipable/clothing/magic/robe
+/obj/item/equippable/clothing/magic/robe
 	name = "Robe"
 	icon_state = "robe"
 	worn_icon_state = "robe"
 
-/obj/item/equipable/clothing/magic/evilrobe
+/obj/item/equippable/clothing/magic/evilrobe
 	name = "Hooded robe"
 	icon_state = "evilrobe"

@@ -8,3 +8,10 @@
 // Layers
 #define LIGHTING_LAYER 100
 #define UI_LAYER 200
+
+// Equippable layers
+#define HEAD_LAYER FLOAT_LAYER - 0.1
+#define BELT_LAYER FLOAT_LAYER - 0.2
+#define ARMOR_LAYER FLOAT_LAYER - 0.3
+#define	CLOTHING_LAYER FLOAT_LAYER - 0.4
+#define LEGS_LAYER FLOAT_LAYER - 0.5

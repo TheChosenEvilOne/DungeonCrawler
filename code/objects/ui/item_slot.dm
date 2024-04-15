@@ -11,7 +11,7 @@
 	var/image/img = image(icon = 'icons/ui.dmi', icon_state = "rarity")
 	img.color = rarity_color(I.rarity)
 	overlays += img
-	if (istype(I, /obj/item/equipable))
+	if (istype(I, /obj/item/equippable))
 		img = image(icon = 'icons/ui.dmi', icon_state = "equip")
 		img.color = "#ccc"
 		overlays += img
@@ -38,7 +38,14 @@
 		return
 	if (istype(over_object, /ui_element/item_slot))
 		var/ui_element/item_slot/slot = over_object
-		if (slot.item) //implement swapping?
+		if (slot.item) //swapping items
+			if(slot.item == item)
+				return
+			var/temp = item
+			remove_item()
+			insert_item(slot.item)
+			slot.remove_item()
+			slot.insert_item(temp)
 			return
 		slot.insert_item(item)
 		usr.inv[slot.slot_number] = item

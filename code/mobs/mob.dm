@@ -86,52 +86,54 @@
 		return TRUE
 	src << "You do not have space for that."
 
-/mob/proc/equip(obj/item/equipable/I)
+/mob/proc/equip(obj/item/equippable/I)
 	if(!can_equip(I))//already thinking about adding a text that tells you why you couldnt equip
 		return
 	//okay basic overlays working
-	src.overlays += create_overlay(I)
 	equipment[I.item_slot] = I
 	I.on_equip(src)
 	update_stats()
-	print_ac_list(equipment)
+	update_appearance()
 	. = I.name
 
 /mob/proc/take_off(item_slot)
-	var/in_slot = equipment[item_slot]
+	var/obj/item/equippable/in_slot = equipment[item_slot]
 	if(!can_take_off(in_slot))
 		return
-	. = "[in_slot?:name] taken off"
-	src.overlays -= create_overlay(in_slot)
+	. = "[in_slot] taken off"
 	equipment.Remove(item_slot)
-	print_ac_list(equipment)
+	update_appearance()
 
-
-/mob/proc/can_equip(obj/item/equipable/I)
+/mob/proc/can_equip(obj/item/equippable/I)
 	if(isnull(equipment[I.item_slot]))
 		return TRUE
 	else
-		src << "something went wrong"
 		return FALSE
 
-/mob/proc/can_take_off(obj/item/equipable/I)
+/mob/proc/can_take_off(obj/item/equippable/I)
 	if(!I.cursed)
 		return TRUE
 	else
 		return FALSE
 
-/mob/proc/update_overlays()
-	
+//for now just going to handle the overlays
+/mob/proc/update_appearance()
+	var/list/overlays_list = list()
+	if((equipment.len == 0))
+		update_overlays(overlays_list)
+		return
 
+	for(var/item in equipment)
+		overlays_list.Add(create_overlay(equipment[item]))
+	update_overlays(overlays_list)
+
+//combat
 /mob/proc/on_death()
 	oview(5) << "[src] dies."
 	new /obj/corpse(loc, src)
 
 /mob/proc/take_damage(damage)
-	var/final_damage = damage - ac * 0.05
-	if(final_damage < 0)
-		final_damage = 0
-	hp -= final_damage //maybe make a function for it later so we can negate lethal damage or something
+	hp -= max(damage - ac * 0.05, 0)
 	if (hp <= 0)
 		on_death()
 
