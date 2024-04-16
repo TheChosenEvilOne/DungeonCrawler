@@ -11,7 +11,7 @@
 	var/image/img = image(icon = 'icons/ui.dmi', icon_state = "rarity")
 	img.color = rarity_color(I.rarity)
 	overlays += img
-	if (istype(I, /obj/item/equippable))
+	if (istype(I, /obj/item/equipable))
 		img = image(icon = 'icons/ui.dmi', icon_state = "equip")
 		img.color = "#ccc"
 		overlays += img

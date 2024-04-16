@@ -1,22 +1,21 @@
-/obj/item/equippable/legs
+/obj/item/equipable/legs
 	layer = LEGS_LAYER
-	icon = 'icons/items/equippable/legs.dmi'
+	icon = 'icons/items/equipable/legs.dmi'
 	worn_icon = 'icons/items/worn_icons/legs_worn.dmi'
 	item_slot = ITEM_SLOT_LEGS
 
-/obj/item/equippable/legs/leather
+/obj/item/equipable/legs/leather
 	name = "Leather Leggins"
 	icon_state = "leather"
-	worn_icon_state = "leather"
 
-/obj/item/equippable/legs/steel
+/obj/item/equipable/legs/steel
 	name = "Steel Leggins"
 	icon_state = "steel"
 
-/obj/item/equippable/legs/gold
+/obj/item/equipable/legs/gold
 	name = "Gold Leggins"
 	icon_state = "gold"
 
-/obj/item/equippable/legs/evil
+/obj/item/equipable/legs/evil
 	name = "Darksteel Leggins"
 	icon_state = "evil"
