@@ -37,17 +37,18 @@
 	if (!item)
 		return
 	if (istype(over_object, /ui_element/item_slot))
-		var/ui_element/item_slot/slot = over_object
-		if (slot.item) //swapping items
-			if(slot.item == item)
+		var/ui_element/item_slot/end_slot = over_object
+		if (end_slot.item) //swapping items
+			if(end_slot.item == item)
 				return
-			var/temp = item
+			usr.inv[end_slot.slot_number] = item
 			remove_item()
-			insert_item(slot.item)
-			slot.remove_item()
-			slot.insert_item(temp)
+			insert_item(end_slot.item)
+			usr.inv[slot_number] = end_slot.item
+			end_slot.remove_item()
+			end_slot.insert_item(usr.inv[end_slot.slot_number])
 			return
-		slot.insert_item(item)
-		usr.inv[slot.slot_number] = item
+		end_slot.insert_item(item)
+		usr.inv[end_slot.slot_number] = item
 		remove_item()
 		usr.inv[slot_number] = null

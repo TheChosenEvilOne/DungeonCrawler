@@ -21,7 +21,7 @@
 #include "code\_defines\items.dm"
 #include "code\_defines\layers.dm"
 #include "code\_defines\skills.dm"
-#include "code\helpers\overlays.dm"
+#include "code\helpers\mutable_appearance.dm"
 #include "code\helpers\print_list.dm"
 #include "code\internal\area.dm"
 #include "code\internal\atom.dm"

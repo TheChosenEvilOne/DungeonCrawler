@@ -87,22 +87,18 @@
 	src << "You do not have space for that."
 
 /mob/proc/equip(obj/item/equipable/item)
-	if(!can_equip(item))//already thinking about adding a text that tells you why you couldnt equip
+	if(!can_equip(item))
 		return
-	//okay basic overlays working
-	equipment[item.item_slot] = item
 	item.on_equip(src)
+	equipment[item.item_slot] = item
 	update_stats()
-	update_appearance()
-	usr << "equipped: [item]"
 
 /mob/proc/take_off(item_slot)
 	var/obj/item/equipable/in_slot = equipment[item_slot]
 	if(!can_take_off(in_slot))
 		return FALSE
+	in_slot.on_take_off(src)
 	equipment.Remove(item_slot)
-	update_appearance()
-	usr << "taken off: [in_slot]"
 
 /mob/proc/can_equip(obj/item/equipable/I)
 	if(isnull(equipment[I.item_slot]))
@@ -115,17 +111,6 @@
 		return TRUE
 	else
 		return FALSE
-
-//for now just going to handle the overlays
-/mob/proc/update_appearance()
-	var/list/overlays_list = list()
-	if((equipment.len == 0))
-		update_overlays(overlays_list)
-		return
-
-	for(var/I in equipment)
-		overlays_list.Add(equipment[I].create_overlay())
-	update_overlays(overlays_list)
 
 //combat
 /mob/proc/on_death()
