@@ -1,10 +1,13 @@
 /obj/item/equipable/chest
-	icon = 'icons/items/chest.dmi'
+	worn_layer = ARMOR_LAYER
+	icon = 'icons/items/equipable/chest.dmi'
+	worn_icon = 'icons/items/worn_icons/chest_worn.dmi'
 	item_slot = ITEM_SLOT_CHEST
 
 /obj/item/equipable/chest/leather
 	name = "Leather Chestplate"
 	icon_state = "leather"
+	stats = list("STR" = 20, "INT" = 20, "DEX" = 20)
 
 /obj/item/equipable/chest/steel
 	name = "Steel Chestplate"

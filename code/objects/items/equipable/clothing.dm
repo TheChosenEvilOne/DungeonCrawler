@@ -1,5 +1,7 @@
 /obj/item/equipable/clothing
-	icon = 'icons/items/clothing.dmi'
+	worn_layer = CLOTHING_LAYER
+	icon = 'icons/items/equipable/clothing.dmi'
+	worn_icon = 'icons/items/worn_icons/clothing_worn.dmi'
 	item_slot = ITEM_SLOT_CLOTHING
 
 /obj/item/equipable/clothing/shirt

@@ -1,5 +1,7 @@
 /obj/item/equipable/belt
-	icon = 'icons/items/belt.dmi'
+	worn_layer = BELT_LAYER
+	icon = 'icons/items/equipable/belt.dmi'
+	worn_icon = 'icons/items/worn_icons/belt_worn.dmi'
 	item_slot = ITEM_SLOT_BELT
 
 /obj/item/equipable/belt/steel
