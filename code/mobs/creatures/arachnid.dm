@@ -11,7 +11,8 @@
 	icon_state = "baby_spider"
 
 /mob/spider/queen
-    name = "Spider Queen"
+	name = "Spider Queen"
 	desc = "She's huge!"
 	max_hp = 200
-	icon_state = "spider" //placeholder for 32x32 sprite
+	icon = 'icons/mobs/32x32.dmi' // Will it work 32x32???
+	icon_state = "spider_queen"
