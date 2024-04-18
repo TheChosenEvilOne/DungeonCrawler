@@ -9,25 +9,25 @@
 "i" = (/obj/item/equipable/ring{rarity = 1},/turf/floor/tile,/area)
 "j" = (/obj/item/equipable/ring{rarity = 2},/turf/floor/tile,/area)
 "k" = (/obj/item/scroll,/turf/floor/tile,/area)
-"l" = (/obj/item/equipable/head/crown,/turf/floor/tile,/area)
-"m" = (/obj/item/equipable/head/full,/turf/floor/tile,/area)
-"n" = (/obj/item/equipable/head/evil_full,/turf/floor/tile,/area)
-"o" = (/obj/item/equipable/head/mask,/turf/floor/tile,/area)
-"p" = (/obj/item/equipable/head/wizard,/turf/floor/tile,/area)
-"q" = (/obj/item/equipable/belt/steel,/turf/floor/tile,/area)
+"l" = (/obj/item/equipable/head/wizard{rarity = 2},/turf/floor/tile,/area)
+"m" = (/obj/item/equipable/clothing/gamberson{rarity = 1},/turf/floor/tile,/area)
+"n" = (/obj/item/equipable/clothing/magic/robe{rarity = 2},/turf/floor/tile,/area)
+"o" = (/obj/item/equipable/clothing/magic/evilrobe{rarity = 3},/turf/floor/tile,/area)
+"p" = (/obj/item/equipable/belt/gold{rarity = 2},/turf/floor/tile,/area)
+"q" = (/obj/item/equipable/belt/emerald{rarity = 4},/turf/floor/tile,/area)
 "r" = (/obj/item/equipable/legs/leather,/turf/floor/tile,/area)
-"s" = (/obj/item/equipable/belt/gold,/turf/floor/tile,/area)
-"t" = (/obj/item/equipable/belt/emerald,/turf/floor/tile,/area)
+"s" = (/obj/item/equipable/chest/evil{rarity = 4},/turf/floor/tile,/area)
+"t" = (/obj/item/equipable/legs/evil{rarity = 4},/turf/floor/tile,/area)
 "u" = (/obj/item/equipable/chest/leather,/turf/floor/tile,/area)
-"v" = (/obj/item/equipable/belt/ruby,/turf/floor/tile,/area)
-"w" = (/obj/item/equipable/legs/evil,/turf/floor/tile,/area)
-"x" = (/obj/item/equipable/legs/steel,/turf/floor/tile,/area)
-"y" = (/obj/item/equipable/clothing/magic/robe,/turf/floor/tile,/area)
-"z" = (/obj/item/equipable/clothing/magic/evilrobe,/turf/floor/tile,/area)
-"A" = (/obj/item/equipable/legs/gold,/turf/floor/tile,/area)
-"B" = (/obj/item/equipable/clothing/shirt/shirt_b,/turf/floor/tile,/area)
+"v" = (/obj/item/equipable/chest/gold{rarity = 2},/turf/floor/tile,/area)
+"w" = (/obj/item/equipable/legs/steel{rarity = 1},/turf/floor/tile,/area)
+"x" = (/obj/item/equipable/chest/steel{rarity = 1},/turf/floor/tile,/area)
+"y" = (/obj/item/equipable/legs/gold{rarity = 2},/turf/floor/tile,/area)
+"z" = (/obj/item/equipable/belt/ruby{rarity = 4},/turf/floor/tile,/area)
+"A" = (/obj/item/equipable/belt/steel{rarity = 1},/turf/floor/tile,/area)
+"B" = (/obj/item/equipable/head/crown{rarity = 4},/turf/floor/tile,/area)
 "C" = (/obj/item/equipable/clothing/shirt,/turf/floor/tile,/area)
-"D" = (/mob/undead/skeleton/skeleton_warrior,/turf/floor/tile,/area)
+"D" = (/mob/undead/skeleton_warrior,/turf/floor/tile,/area)
 "E" = (/mob/undead/lich,/turf/floor/tile,/area)
 "F" = (/mob/undead/skeleton,/turf/floor/tile,/area)
 "G" = (/mob/undead/zombie,/turf/floor/tile,/area)
@@ -37,10 +37,9 @@
 "K" = (/obj/item/equipable/head/round,/turf/floor/tile,/area)
 "L" = (/mob/devil/succubus,/turf/floor/tile,/area)
 "M" = (/mob/devil,/turf/floor/tile,/area)
-"N" = (/obj/item/equipable/clothing/gamberson,/turf/floor/tile,/area)
-"O" = (/obj/item/equipable/chest/steel,/turf/floor/tile,/area)
-"P" = (/obj/item/equipable/chest/gold,/turf/floor/tile,/area)
-"Q" = (/obj/item/equipable/chest/evil,/turf/floor/tile,/area)
+"N" = (/obj/item/equipable/head/mask{rarity = 4},/turf/floor/tile,/area)
+"O" = (/obj/item/equipable/head/full{rarity = 1},/turf/floor/tile,/area)
+"P" = (/obj/item/equipable/head/evil_full{rarity = 4},/turf/floor/tile,/area)
 
 (1,1,1) = {"
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -269,14 +268,14 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-cccccccccccKlDEDmnrccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccopqstvcwxccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-cccccccccccyaaaaazAccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccLkacccakLccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccMkacfcgkMccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccLkaccchkLccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-cccccccccccCaaaijBcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-cccccccccccNuOPQcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+cccccccccccccDEDcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+cccccccccccKCmnloBNccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccOpaaaaaqPccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccLkarstakLccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccMkaufvgkMccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccLkawxyhkLccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccczaaaijAcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 ccccccccccccFGcGFccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 ccccccccccccddeddccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 ccccccccccccdcccdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc

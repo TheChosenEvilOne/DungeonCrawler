@@ -99,10 +99,11 @@
 		return FALSE
 	in_slot.on_take_off(src)
 	equipment.Remove(item_slot)
+	update_stats()
 
 /mob/proc/can_equip(obj/item/equipable/I)
 	if(isnull(equipment[I.item_slot]))
-		return TRUE
+		return TRUE 
 	else
 		return FALSE
 
@@ -111,6 +112,12 @@
 		return TRUE
 	else
 		return FALSE
+
+/mob/proc/equip_new(path)
+	var/I = new path
+	pick_up(I)
+	equip(I)
+	update_stats()
 
 //combat
 /mob/proc/on_death()
@@ -133,6 +140,7 @@
 			return
 		var/skill_level = skills[SKILL_UNARMED]
 		var/damage = (roll_die("1d3") + skill_level) * (1 + ((stats["STR"] - 10) * 0.025))
+		src << "Mob initial health = [other.hp]"
 		damage = other.on_attacked(src, damage)
 		src << "You attack \the [other], dealing [damage] damage."
 		return
