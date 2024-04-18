@@ -1,5 +1,5 @@
 /obj/item/equipable/legs
-	layer = LEGS_LAYER
+	worn_layer = LEGS_LAYER
 	icon = 'icons/items/equipable/legs.dmi'
 	worn_icon = 'icons/items/worn_icons/legs_worn.dmi'
 	item_slot = ITEM_SLOT_LEGS

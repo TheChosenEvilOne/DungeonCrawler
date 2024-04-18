@@ -1,5 +1,5 @@
 /obj/item/equipable/head
-	layer = HEAD_LAYER
+	worn_layer = HEAD_LAYER
 	icon = 'icons/items/equipable/head.dmi'
 	worn_icon = 'icons/items/worn_icons/head_worn.dmi'
 	item_slot = ITEM_SLOT_HEAD

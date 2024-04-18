@@ -1,6 +1,7 @@
 /obj/item/equipable
 	var/item_slot
 	var/worn_icon
+	var/worn_layer
 	var/mutable_appearance/worn
 	var/cursed = FALSE
 	var/stats = list()
@@ -20,11 +21,11 @@
 			return
 	. = ..()
 
-/obj/item/equipable/proc/item_overlay()
-	worn = mutable_appearance(worn_icon, icon_state, layer )
+/obj/item/equipable/New()
+	. = ..()
+	worn = mutable_appearance(worn_icon, icon_state, worn_layer)
 
 /obj/item/equipable/proc/on_equip(mob/user)
-	item_overlay()
 	user.add_managed_overlay(item_slot, worn)
 	user << "equipped: [name]"
 
