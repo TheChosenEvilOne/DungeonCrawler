@@ -1,4 +1,5 @@
 #define ITEM_SLOT_RING	"ring"
+#define ITEM_SLOT_NECKLACE	"necklace"
 #define ITEM_SLOT_HANDS	"hands"
 #define ITEM_SLOT_HEAD	"head"
 #define ITEM_SLOT_CHEST	"chest"
