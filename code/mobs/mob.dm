@@ -140,7 +140,6 @@
 			return
 		var/skill_level = skills[SKILL_UNARMED]
 		var/damage = (roll_die("1d3") + skill_level) * (1 + ((stats["STR"] - 10) * 0.025))
-		src << "Mob initial health = [other.hp]"
 		damage = other.on_attacked(src, damage)
 		src << "You attack \the [other], dealing [damage] damage."
 		return
