@@ -42,6 +42,7 @@
 #include "code\mobs\player.dm"
 #include "code\mobs\creatures\devil.dm"
 #include "code\mobs\creatures\goblin.dm"
+#include "code\mobs\creatures\arachnid.dm"
 #include "code\mobs\creatures\undead.dm"
 #include "code\objects\abstract.dm"
 #include "code\objects\interactions.dm"
