@@ -57,6 +57,8 @@
 #include "code\objects\items\equipable\head.dm"
 #include "code\objects\items\equipable\legs.dm"
 #include "code\objects\items\equipable\ring.dm"
+#include "code\objects\items\equipable\necklace.dm"
+#include "code\objects\items\equipable\weapons.dm"
 #include "code\objects\objects\corpse.dm"
 #include "code\objects\objects\door.dm"
 #include "code\objects\objects\stairs.dm"
