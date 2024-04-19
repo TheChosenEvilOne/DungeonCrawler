@@ -14,12 +14,12 @@
 	max_hp = 15
 	icon_state = "zombie"
 
-/mob/undead/skeleton/skeleton_warrior
+/mob/undead/skeleton/warrior
 	name = "skeleton warrior"
 	desc = "Worse to the bone."
 	max_hp = 20
 
-/mob/undead/skeleton/skeleton_warrior/New()
+/mob/undead/skeleton/warrior/New()
 	. = ..()
 	equip_new(/obj/item/equipable/head/full)
 	equip_new(/obj/item/equipable/chest/steel)
