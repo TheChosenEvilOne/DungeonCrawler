@@ -7,15 +7,19 @@
 /obj/item/equipable/belt/steel
 	name = "Steel Belt"
 	icon_state = "steel"
+	rarity = 1
 
 /obj/item/equipable/belt/gold
 	name = "Golden Belt"
 	icon_state = "gold"
+	rarity = 2
 
 /obj/item/equipable/belt/emerald
 	name = "Emerald Chainbelt"
 	icon_state = "emerald"
+	rarity = 4
 
 /obj/item/equipable/belt/ruby
 	name = "Ruby Chainbelt"
 	icon_state = "ruby"
+	rarity = 4

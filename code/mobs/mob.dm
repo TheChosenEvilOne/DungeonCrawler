@@ -99,10 +99,11 @@
 		return FALSE
 	in_slot.on_take_off(src)
 	equipment.Remove(item_slot)
+	update_stats()
 
 /mob/proc/can_equip(obj/item/equipable/I)
 	if(isnull(equipment[I.item_slot]))
-		return TRUE
+		return TRUE 
 	else
 		return FALSE
 
@@ -111,6 +112,11 @@
 		return TRUE
 	else
 		return FALSE
+
+/mob/proc/equip_new(path)
+	var/I = new path
+	pick_up(I)
+	equip(I)
 
 //combat
 /mob/proc/on_death()

@@ -11,11 +11,14 @@
 /obj/item/equipable/legs/steel
 	name = "Steel Leggins"
 	icon_state = "steel"
+	rarity = 1
 
 /obj/item/equipable/legs/gold
 	name = "Gold Leggins"
 	icon_state = "gold"
+	rarity = 2
 
 /obj/item/equipable/legs/evil
 	name = "Darksteel Leggins"
 	icon_state = "evil"
+	rarity = 4
