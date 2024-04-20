@@ -117,7 +117,6 @@
 	var/I = new path
 	pick_up(I)
 	equip(I)
-	update_stats()
 
 //combat
 /mob/proc/on_death()
