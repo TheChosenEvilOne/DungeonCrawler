@@ -21,7 +21,13 @@
 			return
 		src.dir = IS_ORDINAL(dir) || dir // EAST, WEST, or dir.
 		var/turf/T = get_step(src, dir)
-		if (!T || bump(T)) T = null
+		if (IS_ORDINAL(dir) && T.density)
+			T = get_step(src, dir & 12)
+			if (T.density)
+				T = get_step(src, dir & 3)
+				
+		if (!T || bump(T))
+			T = null
 		var/delay = get_movement_delay(T, dir)
 		if (T && act(delay))
 			glide_size = (16 / delay * world.tick_lag)
